@@ -11,5 +11,6 @@ module load scipy-stack/2022a
 module load cuda/11.0
 module load cudnn/8.0.3
 
+source $HOME/karel_env/bin/activate
 cd $HOME/scratch/karel-synthesis
 python3 experiment/train.py
