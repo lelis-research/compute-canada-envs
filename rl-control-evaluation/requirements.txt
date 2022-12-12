@@ -1,4 +1,5 @@
 gym[box2d]==0.25.1
+torch
 matplotlib
 pandas
 numpy
