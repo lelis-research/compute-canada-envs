@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --cpus-per-task=32
 #SBATCH --mem=8000M
-#SBATCH --time=0-01:00
+#SBATCH --time=0-02:00
 #SBATCH --output=%N-%j.out
 #SBATCH --account=def-lelis
 #SBATCH --array=5000,2000,1950,1900,1850,1100,1050,1000,950
@@ -11,4 +11,4 @@ module load scipy-stack/2022a
 
 source $HOME/rl_env/bin/activate
 cd $HOME/scratch/rl-control-evaluation
-python3 eval_checkpoint.py dqn_agent $SLURM_ARRAY_TASK_ID
+python3 eval_checkpoint.py dqn_agent $SLURM_ARRAY_TASK_ID 500
