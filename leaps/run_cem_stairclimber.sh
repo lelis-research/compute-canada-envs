@@ -26,5 +26,5 @@ netmodel=weights/leaps_$SLURM_ARRAY_TASK_ID.ptp
 for i in {1..20}
 do
     output=logs/$env/leaps_$SLURM_ARRAY_TASK_ID/seed_$i.txt
-    python3 pretrain/trainer.py --configfile pretrain/$env.py --outdir=$outdir --net.saved_params_path $netmodel --save_interval 1 --seed $i  --prefix LEAPS_$SLURM_ARRAY_TASK_ID > $output
+    python3 pretrain/trainer.py --configfile pretrain/$env.py --outdir=$outdir --net.saved_params_path $netmodel --save_interval 1 --seed $i --num_lstm_cell_units $SLURM_ARRAY_TASK_ID --prefix LEAPS_$SLURM_ARRAY_TASK_ID --device cpu > $output
 done
